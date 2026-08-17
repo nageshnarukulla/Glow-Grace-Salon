@@ -1,0 +1,388 @@
+/* ==========================================
+   Glow & Grace Salon & Spa
+   Premium Luxury Theme
+   Part 1
+========================================== */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+font-family:'Poppins',sans-serif;
+background:#0F0F0F;
+color:#fff;
+overflow-x:hidden;
+line-height:1.6;
+}
+
+img{
+display:block;
+width:100%;
+}
+
+.container{
+width:min(1240px,92%);
+margin:auto;
+}
+
+/* =========================
+   Announcement Bar
+========================= */
+
+.offer-bar{
+background:#C89B5A;
+color:#111;
+overflow:hidden;
+white-space:nowrap;
+padding:12px 0;
+font-weight:700;
+font-size:15px;
+}
+
+.offer-track{
+display:inline-block;
+padding-left:100%;
+animation:offerMove 18s linear infinite;
+}
+
+@keyframes offerMove{
+
+0%{transform:translateX(0);}
+100%{transform:translateX(-100%);}
+
+}
+
+/* =========================
+   Header
+========================= */
+
+.header{
+position:fixed;
+top:0;
+width:100%;
+z-index:999;
+background:rgba(10,10,10,.82);
+backdrop-filter:blur(20px);
+border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:16px 0;
+}
+
+.logo{
+font-family:'Playfair Display',serif;
+font-size:34px;
+font-weight:700;
+color:#C89B5A;
+letter-spacing:1px;
+}
+
+nav{
+display:flex;
+gap:34px;
+}
+
+nav a{
+color:#fff;
+text-decoration:none;
+font-size:15px;
+transition:.3s;
+}
+
+nav a:hover{
+color:#C89B5A;
+}
+
+.book-btn{
+background:#C89B5A;
+color:#111;
+padding:12px 26px;
+border-radius:50px;
+text-decoration:none;
+font-weight:700;
+transition:.3s;
+}
+
+.book-btn:hover{
+background:#fff;
+transform:translateY(-3px);
+}
+
+/* =========================
+   Buttons
+========================= */
+
+.gold-btn{
+display:inline-block;
+padding:15px 32px;
+background:linear-gradient(135deg,#C89B5A,#E7C78A);
+color:#111;
+font-weight:700;
+text-decoration:none;
+border-radius:50px;
+transition:.35s;
+box-shadow:0 15px 35px rgba(200,155,90,.35);
+}
+
+.gold-btn:hover{
+transform:translateY(-4px);
+box-shadow:0 20px 45px rgba(200,155,90,.5);
+}
+
+.outline-btn{
+display:inline-block;
+padding:15px 32px;
+border:2px solid rgba(255,255,255,.3);
+border-radius:50px;
+text-decoration:none;
+color:#fff;
+transition:.35s;
+}
+
+.outline-btn:hover{
+border-color:#C89B5A;
+color:#C89B5A;
+}
+
+/* =========================
+   Hero
+========================= */
+
+.hero{
+position:relative;
+min-height:100vh;
+display:flex;
+align-items:center;
+padding-top:90px;
+background:
+linear-gradient(rgba(5,5,5,.55),rgba(5,5,5,.75)),
+url('https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=1800&q=80');
+background-size:cover;
+background-position:center;
+}
+
+.hero-overlay{
+position:absolute;
+inset:0;
+background:
+radial-gradient(circle at right,
+rgba(200,155,90,.18),
+transparent 45%);
+}
+
+.hero-content{
+position:relative;
+z-index:2;
+display:grid;
+grid-template-columns:1.1fr .75fr;
+gap:60px;
+align-items:center;
+}
+
+.hero-tag{
+display:inline-block;
+padding:10px 18px;
+border:1px solid rgba(200,155,90,.4);
+border-radius:50px;
+background:rgba(255,255,255,.05);
+color:#E7C78A;
+margin-bottom:22px;
+}
+
+.hero h1{
+font-family:'Playfair Display',serif;
+font-size:68px;
+line-height:1.05;
+margin-bottom:24px;
+}
+
+.hero p{
+font-size:18px;
+color:#ddd;
+margin-bottom:34px;
+max-width:620px;
+}
+
+.hero-buttons{
+display:flex;
+gap:18px;
+flex-wrap:wrap;
+margin-bottom:45px;
+}
+
+/* =========================
+   Hero Stats
+========================= */
+
+.hero-stats{
+display:flex;
+gap:18px;
+flex-wrap:wrap;
+}
+
+.stat-box{
+padding:22px;
+background:rgba(255,255,255,.06);
+backdrop-filter:blur(20px);
+border:1px solid rgba(255,255,255,.08);
+border-radius:22px;
+min-width:150px;
+transition:.35s;
+}
+
+.stat-box:hover{
+border-color:#C89B5A;
+transform:translateY(-6px);
+}
+
+.stat-box h2{
+font-size:42px;
+color:#C89B5A;
+margin-bottom:6px;
+}
+
+.stat-box span{
+color:#ddd;
+font-size:14px;
+}
+
+/* =========================
+   Booking Card
+========================= */
+
+.booking-card{
+background:rgba(18,18,18,.82);
+backdrop-filter:blur(20px);
+border:1px solid rgba(200,155,90,.18);
+padding:34px;
+border-radius:28px;
+box-shadow:0 30px 60px rgba(0,0,0,.45);
+}
+
+.booking-card h2{
+font-family:'Playfair Display',serif;
+font-size:36px;
+margin-bottom:8px;
+color:#E7C78A;
+}
+
+.booking-card p{
+color:#bbb;
+margin-bottom:24px;
+}
+
+.booking-card form{
+display:flex;
+flex-direction:column;
+gap:16px;
+}
+
+.booking-card input,
+.booking-card select{
+padding:15px;
+border:none;
+border-radius:12px;
+background:#1E1E1E;
+color:#fff;
+font-size:15px;
+outline:none;
+border:1px solid transparent;
+transition:.3s;
+}
+
+.booking-card input:focus,
+.booking-card select:focus{
+border-color:#C89B5A;
+}
+
+/* =========================
+   Common Sections
+========================= */
+
+.services,
+.celebrity-section,
+.gallery-section,
+.bridal-section,
+.review-section,
+.branch-section{
+padding:100px 0;
+}
+
+.section-head{
+text-align:center;
+margin-bottom:60px;
+}
+
+.section-head h2{
+font-family:'Playfair Display',serif;
+font-size:52px;
+margin-bottom:14px;
+}
+
+.section-head p{
+color:#B8B8B8;
+max-width:650px;
+margin:auto;
+}
+
+/* =========================
+   Services Grid
+========================= */
+
+.service-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
+}
+
+.service-card{
+background:#171717;
+border-radius:24px;
+overflow:hidden;
+text-decoration:none;
+color:#fff;
+transition:.4s;
+border:1px solid rgba(255,255,255,.05);
+}
+
+.service-card:hover{
+transform:translateY(-12px);
+border-color:#C89B5A;
+box-shadow:0 30px 60px rgba(0,0,0,.45);
+}
+
+.service-card img{
+height:280px;
+object-fit:cover;
+transition:.6s;
+}
+
+.service-card:hover img{
+transform:scale(1.08);
+}
+
+.card-content{
+padding:24px;
+}
+
+.card-content h3{
+font-family:'Playfair Display',serif;
+font-size:28px;
+margin-bottom:10px;
+}
+
+.card-content p{
+color:#BDBDBD;
+font-size:15px;
+}
