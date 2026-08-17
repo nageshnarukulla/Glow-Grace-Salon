@@ -1,388 +1,531 @@
-/* ==========================================
-   Glow & Grace Salon & Spa
+/* ===============================
+   GLOW & GRACE SALON
    Premium Luxury Theme
-   Part 1
-========================================== */
+==================================*/
 
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
-}
-
-html{
 scroll-behavior:smooth;
 }
 
-body{
-font-family:'Poppins',sans-serif;
-background:#0F0F0F;
-color:#fff;
-overflow-x:hidden;
-line-height:1.6;
+:root{
+
+--gold:#D4AF37;
+--gold-light:#E6C55A;
+--black:#050505;
+--dark:#111111;
+--card:#181818;
+--text:#ffffff;
+--gray:#bdbdbd;
+
 }
 
-img{
-display:block;
-width:100%;
+body{
+
+font-family:'Poppins',sans-serif;
+background:var(--black);
+color:var(--text);
+overflow-x:hidden;
+
 }
+
+/* Scrollbar */
+
+::-webkit-scrollbar{
+
+width:8px;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+background:var(--gold);
+border-radius:20px;
+
+}
+
+/* Container */
 
 .container{
-width:min(1240px,92%);
+
+width:90%;
+max-width:1250px;
 margin:auto;
-}
-
-/* =========================
-   Announcement Bar
-========================= */
-
-.offer-bar{
-background:#C89B5A;
-color:#111;
-overflow:hidden;
-white-space:nowrap;
-padding:12px 0;
-font-weight:700;
-font-size:15px;
-}
-
-.offer-track{
-display:inline-block;
-padding-left:100%;
-animation:offerMove 18s linear infinite;
-}
-
-@keyframes offerMove{
-
-0%{transform:translateX(0);}
-100%{transform:translateX(-100%);}
 
 }
 
-/* =========================
-   Header
-========================= */
+/* Sections */
 
-.header{
+.section{
+
+padding:100px 0;
+
+}
+
+.dark{
+
+background:#0d0d0d;
+
+}
+
+/* Titles */
+
+.section-title{
+
+font-family:'Cinzel',serif;
+font-size:42px;
+text-align:center;
+margin-bottom:20px;
+color:var(--gold);
+
+}
+
+.section-sub{
+
+text-align:center;
+color:var(--gray);
+max-width:650px;
+margin:0 auto 60px;
+
+}
+
+/* ===============================
+   NAVBAR
+==================================*/
+
+header{
+
 position:fixed;
 top:0;
+left:0;
 width:100%;
 z-index:999;
-background:rgba(10,10,10,.82);
-backdrop-filter:blur(20px);
-border-bottom:1px solid rgba(255,255,255,.08);
+transition:.35s;
+
+}
+
+header.sticky{
+
+background:rgba(0,0,0,.92);
+backdrop-filter:blur(12px);
+box-shadow:0 8px 30px rgba(0,0,0,.5);
+
 }
 
 .nav{
+
+height:85px;
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:16px 0;
+
 }
 
 .logo{
-font-family:'Playfair Display',serif;
-font-size:34px;
-font-weight:700;
-color:#C89B5A;
-letter-spacing:1px;
+
+font-family:'Cinzel',serif;
+font-size:30px;
+font-weight:bold;
+
 }
 
-nav{
+.logo span{
+
+color:var(--gold);
+
+}
+
+.nav-links{
+
 display:flex;
-gap:34px;
+gap:35px;
+
 }
 
-nav a{
-color:#fff;
+.nav-links a{
+
 text-decoration:none;
-font-size:15px;
+color:white;
+font-weight:500;
+position:relative;
 transition:.3s;
+
 }
 
-nav a:hover{
-color:#C89B5A;
+.nav-links a:hover{
+
+color:var(--gold);
+
 }
 
-.book-btn{
-background:#C89B5A;
-color:#111;
-padding:12px 26px;
-border-radius:50px;
-text-decoration:none;
-font-weight:700;
-transition:.3s;
-}
+.nav-links a::after{
 
-.book-btn:hover{
-background:#fff;
-transform:translateY(-3px);
-}
-
-/* =========================
-   Buttons
-========================= */
-
-.gold-btn{
-display:inline-block;
-padding:15px 32px;
-background:linear-gradient(135deg,#C89B5A,#E7C78A);
-color:#111;
-font-weight:700;
-text-decoration:none;
-border-radius:50px;
+content:'';
+position:absolute;
+left:0;
+bottom:-6px;
+width:0%;
+height:2px;
+background:var(--gold);
 transition:.35s;
-box-shadow:0 15px 35px rgba(200,155,90,.35);
+
 }
 
-.gold-btn:hover{
-transform:translateY(-4px);
-box-shadow:0 20px 45px rgba(200,155,90,.5);
+.nav-links a:hover::after{
+
+width:100%;
+
 }
 
-.outline-btn{
-display:inline-block;
-padding:15px 32px;
-border:2px solid rgba(255,255,255,.3);
-border-radius:50px;
-text-decoration:none;
-color:#fff;
-transition:.35s;
+.menu-toggle{
+
+display:none;
+font-size:34px;
+cursor:pointer;
+
 }
 
-.outline-btn:hover{
-border-color:#C89B5A;
-color:#C89B5A;
-}
-
-/* =========================
-   Hero
-========================= */
+/* ===============================
+   HERO
+==================================*/
 
 .hero{
-position:relative;
-min-height:100vh;
+
+height:100vh;
+
+background:url('https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1800&q=80')
+center/cover no-repeat;
+
 display:flex;
+justify-content:center;
 align-items:center;
-padding-top:90px;
-background:
-linear-gradient(rgba(5,5,5,.55),rgba(5,5,5,.75)),
-url('https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=1800&q=80');
-background-size:cover;
-background-position:center;
+position:relative;
+
 }
 
-.hero-overlay{
+.overlay{
+
 position:absolute;
 inset:0;
-background:
-radial-gradient(circle at right,
-rgba(200,155,90,.18),
-transparent 45%);
+
+background:linear-gradient(
+180deg,
+rgba(0,0,0,.45),
+rgba(0,0,0,.78)
+);
+
 }
 
 .hero-content{
-position:relative;
-z-index:2;
-display:grid;
-grid-template-columns:1.1fr .75fr;
-gap:60px;
-align-items:center;
-}
 
-.hero-tag{
-display:inline-block;
-padding:10px 18px;
-border:1px solid rgba(200,155,90,.4);
-border-radius:50px;
-background:rgba(255,255,255,.05);
-color:#E7C78A;
-margin-bottom:22px;
+position:relative;
+text-align:center;
+max-width:850px;
+padding:20px;
+
 }
 
 .hero h1{
-font-family:'Playfair Display',serif;
-font-size:68px;
-line-height:1.05;
-margin-bottom:24px;
+
+font-family:'Cinzel',serif;
+font-size:72px;
+line-height:1.15;
+margin-bottom:25px;
+
 }
 
 .hero p{
-font-size:18px;
-color:#ddd;
-margin-bottom:34px;
-max-width:620px;
+
+font-size:22px;
+color:#e5e5e5;
+margin-bottom:40px;
+
 }
+
+/* Buttons */
 
 .hero-buttons{
+
 display:flex;
-gap:18px;
+justify-content:center;
+gap:20px;
 flex-wrap:wrap;
-margin-bottom:45px;
+
 }
 
-/* =========================
-   Hero Stats
-========================= */
+.btn{
 
-.hero-stats{
-display:flex;
-gap:18px;
-flex-wrap:wrap;
-}
+display:inline-flex;
+align-items:center;
+justify-content:center;
 
-.stat-box{
-padding:22px;
-background:rgba(255,255,255,.06);
-backdrop-filter:blur(20px);
-border:1px solid rgba(255,255,255,.08);
-border-radius:22px;
-min-width:150px;
+padding:16px 34px;
+
+border-radius:50px;
+text-decoration:none;
+font-weight:600;
+
 transition:.35s;
+position:relative;
+overflow:hidden;
+
+cursor:pointer;
+
 }
 
-.stat-box:hover{
-border-color:#C89B5A;
-transform:translateY(-6px);
+.gold{
+
+background:var(--gold);
+color:black;
+
 }
 
-.stat-box h2{
-font-size:42px;
-color:#C89B5A;
-margin-bottom:6px;
+.gold:hover{
+
+background:var(--gold-light);
+transform:translateY(-3px);
+box-shadow:0 10px 30px rgba(212,175,55,.35);
+
 }
 
-.stat-box span{
-color:#ddd;
-font-size:14px;
+.outline{
+
+border:2px solid var(--gold);
+color:var(--gold);
+
 }
 
-/* =========================
-   Booking Card
-========================= */
+.outline:hover{
 
-.booking-card{
-background:rgba(18,18,18,.82);
-backdrop-filter:blur(20px);
-border:1px solid rgba(200,155,90,.18);
-padding:34px;
-border-radius:28px;
-box-shadow:0 30px 60px rgba(0,0,0,.45);
+background:var(--gold);
+color:black;
+transform:translateY(-3px);
+
 }
 
-.booking-card h2{
-font-family:'Playfair Display',serif;
-font-size:36px;
-margin-bottom:8px;
-color:#E7C78A;
+/* Ripple */
+
+.btn .ripple{
+
+position:absolute;
+width:20px;
+height:20px;
+background:rgba(255,255,255,.5);
+border-radius:50%;
+transform:translate(-50%,-50%);
+animation:ripple .6s linear;
+
 }
 
-.booking-card p{
-color:#bbb;
-margin-bottom:24px;
+@keyframes ripple{
+
+to{
+
+width:320px;
+height:320px;
+opacity:0;
+
 }
 
-.booking-card form{
-display:flex;
-flex-direction:column;
-gap:16px;
 }
 
-.booking-card input,
-.booking-card select{
-padding:15px;
-border:none;
-border-radius:12px;
-background:#1E1E1E;
-color:#fff;
-font-size:15px;
-outline:none;
-border:1px solid transparent;
-transition:.3s;
-}
+/* ===============================
+   ABOUT
+==================================*/
 
-.booking-card input:focus,
-.booking-card select:focus{
-border-color:#C89B5A;
-}
+.about{
 
-/* =========================
-   Common Sections
-========================= */
-
-.services,
-.celebrity-section,
-.gallery-section,
-.bridal-section,
-.review-section,
-.branch-section{
-padding:100px 0;
-}
-
-.section-head{
-text-align:center;
-margin-bottom:60px;
-}
-
-.section-head h2{
-font-family:'Playfair Display',serif;
-font-size:52px;
-margin-bottom:14px;
-}
-
-.section-head p{
-color:#B8B8B8;
-max-width:650px;
-margin:auto;
-}
-
-/* =========================
-   Services Grid
-========================= */
-
-.service-grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:30px;
+grid-template-columns:1fr 1fr;
+gap:60px;
+align-items:center;
+
 }
 
-.service-card{
-background:#171717;
+.about-image{
+
 border-radius:24px;
 overflow:hidden;
-text-decoration:none;
-color:#fff;
-transition:.4s;
-border:1px solid rgba(255,255,255,.05);
+
 }
 
-.service-card:hover{
-transform:translateY(-12px);
-border-color:#C89B5A;
-box-shadow:0 30px 60px rgba(0,0,0,.45);
-}
+.about-image img{
 
-.service-card img{
-height:280px;
+width:100%;
+height:100%;
+display:block;
 object-fit:cover;
-transition:.6s;
+transition:.5s;
+
 }
 
-.service-card:hover img{
-transform:scale(1.08);
+.about-image:hover img{
+
+transform:scale(1.06);
+
 }
 
-.card-content{
-padding:24px;
+.about-text h2{
+
+font-family:'Cinzel',serif;
+font-size:38px;
+margin-bottom:25px;
+color:var(--gold);
+
 }
 
-.card-content h3{
-font-family:'Playfair Display',serif;
-font-size:28px;
-margin-bottom:10px;
+.about-text p{
+
+color:var(--gray);
+line-height:1.8;
+margin-bottom:35px;
+
 }
 
-.card-content p{
-color:#BDBDBD;
+/* Stats */
+
+.stats{
+
+display:flex;
+gap:40px;
+flex-wrap:wrap;
+
+}
+
+.stats h3{
+
+font-size:42px;
+color:var(--gold);
+
+}
+
+.stats p{
+
 font-size:15px;
+
+}
+
+/* ===============================
+   REVEAL ANIMATION
+==================================*/
+
+.reveal{
+
+opacity:0;
+transform:translateY(50px);
+transition:1s;
+
+}
+
+.reveal.show{
+
+opacity:1;
+transform:translateY(0);
+
+}
+
+/* ===============================
+   BACK TO TOP
+==================================*/
+
+.back-to-top{
+
+position:fixed;
+right:25px;
+bottom:25px;
+
+width:52px;
+height:52px;
+
+border:none;
+border-radius:50%;
+
+background:var(--gold);
+color:black;
+
+font-size:22px;
+cursor:pointer;
+
+opacity:0;
+pointer-events:none;
+
+transition:.35s;
+
+}
+
+.back-to-top.show{
+
+opacity:1;
+pointer-events:auto;
+
+}
+
+.back-to-top:hover{
+
+transform:translateY(-5px);
+
+}
+
+/* ===============================
+   MOBILE
+==================================*/
+
+@media(max-width:900px){
+
+.nav-links{
+
+position:absolute;
+top:85px;
+right:-100%;
+
+background:#111;
+
+width:260px;
+
+padding:30px;
+
+flex-direction:column;
+
+transition:.35s;
+
+}
+
+.nav-links.active{
+
+right:0;
+
+}
+
+.menu-toggle{
+
+display:block;
+
+}
+
+.hero h1{
+
+font-size:48px;
+
+}
+
+.hero p{
+
+font-size:18px;
+
+}
+
+.about{
+
+grid-template-columns:1fr;
+
+}
+
+.section-title{
+
+font-size:34px;
+
+}
+
 }
